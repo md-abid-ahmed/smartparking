@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Smart Parking System</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="style.css">
+    
+</head>
+<body>
+    
+    
+	<header>
+		<nav>
+			<div class="logo">
+				<h1>Smart Parking</h1>
+			</div>
+			<ul class="nav-links">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="about.html">AboutUs</a></li>
+				<li><a href="dis.html">DisabilitySupport</a></li>
+                
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<section class="booking-form">
+			<script>
+				function calculatePrice() {
+  const duration = document.getElementById('duration').value;
+  localStorage.setItem('duration', duration);
+}
+			</script>
+			<h2>Book Your Parking Space Now!</h2>
+            <ul><form action="" method="post">
+				<li><label for="location">Location:</label>
+				<select id="location" name="location">
+					<option value="location1">Location 1</option>
+					<option value="location2">Location 2</option>
+					<option value="location3">Location 3</option>
+				</select>
+
+                </li>
+
+				<li><label for="date">Date:</label>
+				<input type="date" id="date" name="date"></li>
+                <li><label for="duration">Duration And Price:</label>
+				<select id="duration" name="duration" onchange="calculatePrice()">
+					<option value="1">1 Hour = 45 Rupees</option>
+					<option value="2">2 Hours= 90 Rupees</option>
+					<option value="3">3 Hours= 135 Rupees</option>
+					<option value="4">4 Hours= 180 Rupees</option>
+					<option value="5">5 Hours= 225 Rupees</option>
+					<option value="6">6 Hours= 270 Rupees</option>
+					<option value="7">7 Hours= 315 Rupees</option>
+					<option value="8">8 Hours= 360 Rupees</option>
+					<option value="9">9 Hours= 405 Rupees</option>
+					<option value="10">10+Hours=450 Rupees</option>
+				</select></li>
+
+				<li><label for="ENTER YOU CAR NUMBER">ENTER YOUR CAR NUMBER</label>
+				<textarea id="message" name="message" placeholder="ENTER YOUR CAR NUMBER">
+
+                </textarea>
+                
+				</li>
+                
+                
+			
+				<script>
+					function cancelBooking() {
+					  window.location.href = "payment.html";
+					}
+					</script>
+                
+
+				<button type="button" onclick="cancelBooking()">BOOK NOW</button>
+				<button type="submit">CANCEL BOOKING</button>
+			</form></ul>
+			
+		</section>
+
+		<section class="parking-dimensions">
+			<h2>Parking Space Dimensions</h2>
+			<p>Length: 18 feet</p>
+			<p>Width:  9 feet</p>
+			<p>Height: 7 feet</p>
+		</section>
+	</main>
+
+	<footer>
+		<p>Contact us at <a href="contact.html">6303056xxx</a></p>
+	</footer>
+
+	<script src="script.js"></script>
+</body>
+</html>

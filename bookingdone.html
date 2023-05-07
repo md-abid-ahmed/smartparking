@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        p {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ab3671;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const paymentMethod = localStorage.getItem('paymentMethod');
+      
+        if (paymentMethod === 'upi') {
+          document.getElementById('message').textContent = 'Your payment was successful using UPI!';
+        } else {
+          document.getElementById('message').textContent = 'Your booking was successful!';
+        }
+    </script>
+    <p>BOOKING DONE!</p>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f5f5f5;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="radio"] {
+      margin-right: 10px;
+    }
+
+    button[type="submit"] {
+      display: block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #3e8e41;
+    }
+  </style>
+</head>
+<body>
+  <form id="payment-form">
+    <h2>Select Payment Method</h2>
+    <label>
+      <input type="radio" name="payment" id="cash" value="cash">
+      Cash
+    </label>
+    <label>
+      <input type="radio" name="payment" id="upi" value="upi">
+      UPI
+    </label>
+    <button type="submit">Pay Now</button>
+  </form>
+
+  <script>
+    const duration = localStorage.getItem('duration');
+    const pricePerHour = 45;
+    const totalAmount = duration * pricePerHour;
+
+    const paymentForm = document.getElementById('payment-form');
+    const cashOption = document.getElementById('cash');
+    const upiOption = document.getElementById('upi');
+
+    paymentForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // If neither radio button is selected, show an alert and exit the function
+      if (!cashOption.checked && !upiOption.checked) {
+        alert('Please select a payment method');
+        return;
+      }
+
+      // If the "Cash" radio button is selected, show an alert and redirect to bookingdone.html
+      if (cashOption.checked) {
+        alert('Booking Successful!');
+        window.location.replace('bookingdone.html');
+      } else if (upiOption.checked) { // If the "UPI" radio button is selected, show an alert and redirect to upipayment.html
+        const upiNumber = '6303056564';
+        alert(`Please make a payment of Rs.${totalAmount} to ${upiNumber}`);
+        localStorage.setItem('paymentMethod', 'upi');
+        window.location.replace('upipayment.html');
+      }
+    });
+
+    const payNowButton = document.querySelector('#payment-form button[type="submit"]');
+
+    // When the "Pay Now" button is clicked and neither radio button is selected, show an alert
+    payNowButton.addEventListener('click', function(event) {
+      if (!cashOption.checked && !upiOption.checked) {
+        alert('Please select a payment method');
+        event.preventDefault();
+      }
+    });
+  </script>
+</body>
+</html>

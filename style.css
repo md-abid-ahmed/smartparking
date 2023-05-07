@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #ecf4f1;
+    color: #333;
+  }
+  
+  header {
+    background-color: #0a5d37;
+    color: #ffffff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  nav ul li {
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    color: #270f0f;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #f2f2f2;
+  }
+  
+  .booking-form {
+    background-color: #086f48;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #6b6e0bf1;
+  }
+  
+  .booking-form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .booking-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .booking-form select,
+  .booking-form input[type="date"],
+  .booking-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  
+  .booking-form input[type="submit"],
+  .booking-form button {
+    background-color: #d23e0c;
+    color: #0a0909;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .booking-form input[type="submit"]:hover,
+  .booking-form button:hover {
+    background-color: #a8bdae;
+    color: #ede9e9;
+  }
+  
+  .parking-dimensions {
+    background-color: #716f7e49;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(224, 16, 16, 0.2);
+  }
+  
+  .parking-dimensions h2 {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .parking-dimensions p {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  footer {
+    background-color: #ede6e6;
+    color: #d21919;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  footer a {
+    color: #9f1717;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+}
